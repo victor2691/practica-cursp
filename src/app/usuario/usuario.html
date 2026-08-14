@@ -1,7 +1,7 @@
 <div>
-  <button (click)="actualizarUsuario()">
-<img [src]="rutaimg" [alt]="usuarioSeleccionado.nombre">
-<span>{{usuarioSeleccionado.nombre}}</span>
+  <button (click)="alSeleccionarUsuarios()">
+<img [src]="rutaimg()" [alt]="nombre()"> <!-- para llamar al signal es como una funcion -->
+<span>{{nombre()}}</span>
 </button>
 </div>
 <!-- evento listener -->
