@@ -1,18 +1,20 @@
 <app-encabezado />
 <main>
+  <!--Pavar versiones anteriores se utilizaban *ngfor y *ngif en algular moderno se usa for y if 
+  se necesita importar NGFOR y NGIF con for y if viene nativo no necesita importar 
+  -->
   <ul id="usuarios">
     @for (usuario2 of usuarios; track usuario2.id){
     <li>
       <app-usuario [Usuarios]="usuario2" (seleccion)="alSeleccionarUsuario($event)" />
     </li>
-
     }
-
   </ul>
 
+
   @if (nombreusuario()) {
-    <app-tareas [nombreParaTarea]="nombreusuario()" />
+  <app-tareas [nombreParaTarea]="nombreusuario()" [IdUsuario]="iduser()" />
   } @else {
-    <p id="fallback">¡Selecciona un usuario para ver sus tareas!</p>
+  <p id="fallback">¡Selecciona un usuario para ver sus tareas!</p>
   }
 </main>

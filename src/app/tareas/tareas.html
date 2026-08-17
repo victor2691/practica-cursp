@@ -6,7 +6,10 @@
         </menu>
     </header>
     <ul>
-        <app-tarea>RR</app-tarea>
-        <app-tarea>RR</app-tarea>
+        @for(tarea of tareasUsuarioSeleccionado; track tarea.id){
+        <li>
+            <app-tarea [tarea]="tarea" />
+        </li>
+        }
     </ul>
 </section>
