@@ -7,21 +7,22 @@ import { Tareas } from './tareas/tareas';
 
 @Component({
   selector: 'app-root',
-  imports: [Encabezado, Usuario],
+  imports: [Encabezado, Usuario, Tareas],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   usuarios = USUARIOS_FALSOS;
-  nombreUsuario?: Usuario;
+  nombreusuario = signal("");
 
   alSeleccionarUsuario(id: string) {
     console.log('Usuario seleccionado con el id ' + id);
-
-    this.nombreUsuario = USUARIOS_FALSOS.find((usuario: Usuario) => usuario.id === id);
+    const nombre = this.usuarios.find(u => u.id === id)?.nombre;
+    //this.nombreusuario.set(nombre ?? '');
+    //ALTERNATIVA
+    if (nombre) {
+      this.nombreusuario.set(nombre);
+    }
   }
 
-  EnviarNombre(nonbre: string) {
-
-  }
 }

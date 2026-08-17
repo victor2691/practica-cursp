@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-encabezado',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './encabezado.html',
   styleUrl: './encabezado.css',
 })
-export class Encabezado {}
+export class Encabezado {
+
+}
+

@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { required } from '@angular/forms/signals';
+import { Tarea } from '../tarea/tarea';
 
 @Component({
   selector: 'app-tareas',
-  imports: [],
+  imports: [Tarea],
   templateUrl: './tareas.html',
   styleUrl: './tareas.css',
 })
 export class Tareas {
-@Input({required: true}) nombreParaTarea!: string;
+  @Input({ required: true }) nombreParaTarea!: string;
 }

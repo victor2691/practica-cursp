@@ -1,21 +1,18 @@
 <app-encabezado />
 <main>
   <ul id="usuarios">
+    @for (usuario2 of usuarios; track usuario2.id){
     <li>
-      <app-usuario [id]="usuarios[0].id"  [avatar]="usuarios[0].avatar" [nombre]="usuarios[0].nombre" (seleccion)="alSeleccionarUsuario($event)" />
+      <app-usuario [Usuarios]="usuario2" (seleccion)="alSeleccionarUsuario($event)" />
     </li>
-    <li>
-      <app-usuario [id]="usuarios[1].id" [avatar]="usuarios[1].avatar" [nombre]="usuarios[1].nombre" (seleccion)="alSeleccionarUsuario($event)" />
-    </li>
-    <li>
-      <app-usuario [id]="usuarios[2].id"  [avatar]="usuarios[2].avatar" [nombre]="usuarios[2].nombre" (seleccion)="alSeleccionarUsuario($event)" />
-    </li>
-    <li>
-      <app-usuario  [id]="usuarios[3].id"  [avatar]="usuarios[3].avatar" [nombre]="usuarios[3].nombre" (seleccion)="alSeleccionarUsuario($event)"/>
-    </li>
+
+    }
+
   </ul>
 
-  TAREAS DE USUARIO
-
-
+  @if (nombreusuario()) {
+    <app-tareas [nombreParaTarea]="nombreusuario()" />
+  } @else {
+    <p id="fallback">¡Selecciona un usuario para ver sus tareas!</p>
+  }
 </main>
