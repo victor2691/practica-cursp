@@ -6,7 +6,8 @@
   <ul id="usuarios">
     @for (usuario2 of usuarios; track usuario2.id){
     <li>
-      <app-usuario [Usuarios]="usuario2" (seleccion)="alSeleccionarUsuario($event)" />
+      <app-usuario [Usuarios]="usuario2" [seleccionado]="usuario2.id === iduser()"
+        (seleccion)="alSeleccionarUsuario($event)" />
     </li>
     }
   </ul>

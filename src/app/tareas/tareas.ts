@@ -37,6 +37,7 @@ export class Tareas {
 
   get tareasUsuarioSeleccionado() {
     return this.tareasFalses.filter((tarea) => tarea.idUsuario === this.IdUsuario);
+    /*EL FILTER RETORNA UN ARREGLO CON EL RESULTADO*/
 
   }
 }

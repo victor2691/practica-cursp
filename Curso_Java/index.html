@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosco Interactivo de Recargas Prepago - Claro</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-logo">
+            <h1>Claro</h1>
+        </div>
+        <h2>Kiosco Interactivo de Recargas Prepago</h2>
+        <p>Procesamiento en cola y gestión reactiva de solicitudes en vivo</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Panel 1: Atención de Cola y Tarjeta -->
+        <section class="panel">
+            <div class="panel-header">
+                <h3 class="panel-title">⚡ Recarga en Proceso</h3>
+                <div>
+                    <span>En cola: </span>
+                    <span id="cola" class="badge-cola">0</span>
+                </div>
+            </div>
+
+            <!-- Tarjeta con IDs requeridos -->
+            <div id="recarga" class="tarjeta pendiente">
+                <div class="campo-grupo">
+                    <span class="etiqueta">Cliente</span>
+                    <span id="cliente" class="valor-cliente">Cargando...</span>
+                </div>
+                <div class="campo-grupo">
+                    <span class="etiqueta">Monto de Recarga</span>
+                    <span id="monto" class="valor-monto">₡0</span>
+                </div>
+                <div class="campo-grupo">
+                    <span class="etiqueta">Estado de Solicitud</span>
+                    <div id="estado" class="valor-estado">Pendiente</div>
+                </div>
+            </div>
+
+            <button id="btnProcesar" class="btn-procesar">
+                <span>▶ Procesar Siguiente Recarga</span>
+            </button>
+        </section>
+
+        <!-- Panel 2: Búsqueda y Filtros -->
+        <section class="panel">
+            <div class="panel-header">
+                <h3 class="panel-title">🔍 Buscador y Filtros</h3>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="buscar" class="etiqueta">Buscar por Cliente (input / keyup)</label>
+                <input type="text" id="buscar" class="input-control" placeholder="Escriba el nombre del cliente...">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="filtroNivel" class="etiqueta">Filtrar por Nivel de Monto (change)</label>
+                <select id="filtroNivel" class="select-control">
+                    <option value="todos">-- Mostrar todos los niveles --</option>
+                    <option value="alto">Alto (₡10,000 o más)</option>
+                    <option value="medio">Medio (₡3,000 a ₡9,999)</option>
+                    <option value="bajo">Bajo (Menos de ₡3,000)</option>
+                </select>
+            </div>
+
+            <div class="campo-grupo">
+                <span class="etiqueta">Resultados Filtrados</span>
+                <div id="resultados" class="resultados-contenedor">
+                    <p class="resultado-item sin-resultados">Utilice el buscador o select para filtrar la cola.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leyenda de Atajos e Interacción -->
+        <footer class="instrucciones">
+            <div class="instruccion-item">
+                <span>🖱️ Click en botón o <span class="kbd">Enter</span>:</span> Procesar siguiente
+            </div>
+            <div class="instruccion-item">
+                <span>👆 Doble click en tarjeta:</span> Marcar como procesada
+            </div>
+            <div class="instruccion-item">
+                <span>⌨️ Tecla <span class="kbd">Escape</span>:</span> Poner recarga en espera
+            </div>
+            <div class="instruccion-item">
+                <span>🖱️ Hover mouse:</span> Resaltar tarjeta
+            </div>
+        </footer>
+    </main>
+
+    <!-- Script de lógica y eventos al FINAL del body -->
+    <script src="recargas.js"></script>
+</body>
+</html>

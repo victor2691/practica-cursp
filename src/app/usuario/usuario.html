@@ -1,5 +1,6 @@
 <div>
-  <button (click)="alSeleccionarUsuarios()">
+  <!-- con la propiedad CLASS.ACTIVE AGREGA UNA CLASE SI ES TRUE SI NO FALSE -->
+  <button [class.active]="seleccionado" (click)="alSeleccionarUsuarios()">
     <img [src]="rutaimg" [alt]="Usuarios.nombre">
     <span>{{Usuarios.nombre}}</span>
   </button>

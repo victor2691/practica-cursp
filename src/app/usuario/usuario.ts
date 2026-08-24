@@ -22,6 +22,7 @@ export class Usuario {
   //@Input({required: true}) nombre!: string;
   /// OTRA FORMA QUE PODEMOS USAR LOS Input son como signals seria con la funcion generica input
   @Input({ required: true }) Usuarios!: UsuariosFalsos;
+  @Input({ required: true }) seleccionado!: boolean;
   //avatar = input.required<string>();
   //nombre = input.required<string>();
   @Output() seleccion = new EventEmitter();
